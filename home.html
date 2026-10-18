@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelly Lim — Portfolio</title>
+    <meta
+      name="description"
+      content="Kelly Lim is a sales administrator and an RYT 200 Hatha Yoga instructor."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css?v=14" />
+  </head>
+  <body class="bg-stone-50 font-sans text-stone-900 antialiased">
+    <div data-home>
+      <a
+        href="#main"
+        class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-rose-900 focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+        >Skip to content</a
+      >
+
+      <div data-component="component/header.html"></div>
+
+      <main id="main">
+        <section id="hero" class="relative overflow-hidden" aria-labelledby="hero-heading">
+          <div class="hero-waves pointer-events-none absolute inset-x-0 bottom-0" aria-hidden="true">
+            <svg class="hero-wave hero-wave-back" viewBox="0 0 1440 160" preserveAspectRatio="none">
+              <path fill="#fbcfe8" fill-opacity="0.7" d="M0 80C180 130 360 20 540 48C720 76 900 150 1080 128C1260 106 1350 70 1440 56V160H0Z" />
+            </svg>
+            <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+              <path fill="#fff7f9" d="M0 64C220 110 420 18 640 42C860 66 1040 118 1220 96C1320 84 1380 72 1440 60V120H0Z" />
+            </svg>
+          </div>
+          <div class="relative mx-auto grid max-w-6xl items-center gap-8 px-4 pb-16 pt-6 sm:px-0 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:pb-20 lg:pt-8">
+            <div class="hero-rise order-2 mx-auto w-full max-w-xl text-center lg:order-1 lg:mx-0 lg:max-w-none lg:text-left">
+              <h1 id="hero-heading" class="font-serif text-5xl font-medium tracking-tight text-stone-900 sm:text-6xl lg:text-7xl">Kelly Lim</h1>
+              <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-stone-600 lg:mx-0">
+                Sales administrator with seven years in the field, and an RYT 200 Hatha Yoga instructor.
+              </p>
+              <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+                <a href="#about" class="inline-flex items-center justify-center rounded-full bg-rose-900 px-6 py-3 text-sm font-medium text-white hover:bg-rose-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">About Me</a>
+              </div>
+            </div>
+
+            <div class="hero-rise hero-rise-late order-1 relative mx-auto w-full max-w-[18rem] lg:order-2 lg:max-w-[22rem]">
+              <img src="images/kelly-portrait.png" alt="Kelly Lim" class="mx-auto h-auto max-h-[34rem] w-full object-contain" />
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="page-sheet" aria-labelledby="content-heading">
+          <div class="mx-auto max-w-6xl px-5 py-10 sm:px-8 lg:py-14">
+            <header class="reveal">
+              <p class="text-lg font-semibold uppercase tracking-[0.22em] text-rose-900">About Me</p>
+              <h2 id="content-heading" class="mt-3 font-serif text-4xl font-medium tracking-tight text-stone-900">Kelly Lim</h2>
+              <p class="mt-4 text-base leading-relaxed text-stone-600">
+                With over 3 years of Yoga experience, expertise in helping clients to meet yoga and improve themselves with yoga. Associate and expertise in Sales and Marketing, adminstration with documentation work on the workplace.
+              </p>
+            </header>
+
+            <div id="expertise" class="reveal mt-10 scroll-mt-28 lg:mt-12 border-t border-rose-100 pt-10">
+              <div class="mx-auto mt-10 hidden max-w-4xl items-center gap-x-12 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+                <div id="expertise-sales" class="text-right">
+                  <h4 class="font-serif text-2xl leading-none text-stone-900">Sales and Marketing</h4>
+                  <p class="mt-2 text-sm leading-relaxed text-stone-600">Administration and documentation at work.</p>
+                  <a href="work.html" class="mt-4 inline-flex rounded-full border border-rose-200 px-5 py-2 text-sm font-medium text-rose-900 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">See more</a>
+                </div>
+                <div class="relative h-56 w-56 overflow-hidden rounded-full bg-rose-100 ring-1 ring-rose-200">
+                  <img src="images/kelly-expertise.png" alt="Kelly Lim" class="absolute left-0 top-[-20.8%] w-[119.8%] max-w-none" />
+                </div>
+                <div id="expertise-yoga" class="text-left">
+                  <h4 class="font-serif text-2xl leading-none text-stone-900">Yoga</h4>
+                  <p class="mt-2 text-sm leading-relaxed text-stone-600">RYT 200 Hatha Yoga Instructor.</p>
+                  <a href="yoga.html" class="mt-4 inline-flex rounded-full border border-rose-200 px-5 py-2 text-sm font-medium text-rose-900 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">See more</a>
+                </div>
+              </div>
+
+              <div class="mt-8 lg:hidden">
+                <div class="flex justify-end gap-2">
+                  <button type="button" data-carousel-prev class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-200 text-rose-900 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800" aria-label="Previous roles">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6" /></svg>
+                  </button>
+                  <button type="button" data-carousel-next class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-200 text-rose-900 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800" aria-label="Next roles">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" /></svg>
+                  </button>
+                </div>
+                <ul data-carousel class="mt-5 flex snap-x gap-4 overflow-x-auto scroll-smooth pb-2">
+                  <li class="w-[18.5rem] shrink-0 snap-start">
+                    <a href="work.html" class="flex h-full flex-col rounded-2xl border border-rose-100 bg-rose-50/70 p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">
+                      <span class="h-10 w-10 rounded-xl bg-rose-100" aria-hidden="true"></span>
+                      <span class="mt-4 font-serif text-xl text-stone-900">Sales and Marketing</span>
+                      <span class="mt-1 text-sm text-stone-500">Administration and documentation at work.</span>
+                      <span class="mt-4 text-sm font-medium text-rose-900">See more →</span>
+                    </a>
+                  </li>
+                  <li class="w-[18.5rem] shrink-0 snap-start">
+                    <a href="yoga.html" class="flex h-full flex-col rounded-2xl border border-rose-100 bg-rose-50/70 p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">
+                      <span class="h-10 w-10 rounded-xl bg-rose-100" aria-hidden="true"></span>
+                      <span class="mt-4 font-serif text-xl text-stone-900">Yoga</span>
+                      <span class="mt-1 text-sm text-stone-500">RYT 200 Hatha Yoga Instructor.</span>
+                      <span class="mt-4 text-sm font-medium text-rose-900">See more →</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div data-component="component/footer.html"></div>
+    </div>
+    <script src="main.js?v=9"></script>
+  </body>
+</html>
