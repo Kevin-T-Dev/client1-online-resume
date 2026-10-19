@@ -12,11 +12,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Outfit:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="styles.css?v=14" />
+    <link rel="stylesheet" href="styles.css?v=17" />
   </head>
   <body class="bg-stone-50 font-sans text-stone-900 antialiased">
     <div data-home>
@@ -66,45 +66,68 @@
             </header>
 
             <div id="expertise" class="reveal mt-10 scroll-mt-28 lg:mt-12 border-t border-rose-100 pt-10">
-              <div class="mx-auto mt-10 hidden max-w-4xl items-center gap-x-12 lg:grid lg:grid-cols-[1fr_auto_1fr]">
-                <div id="expertise-sales" class="text-right">
-                  <h4 class="font-serif text-2xl leading-none text-stone-900">Sales and Marketing</h4>
-                  <p class="mt-2 text-sm leading-relaxed text-stone-600">Administration and documentation at work.</p>
-                  <a href="work.html" class="mt-4 inline-flex rounded-full border border-rose-200 px-5 py-2 text-sm font-medium text-rose-900 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">See more</a>
+              <div data-diagram class="relative mx-auto mt-10 hidden max-w-5xl items-center lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-x-6">
+                <svg data-diagram-lines class="pointer-events-none absolute inset-0 h-full w-full overflow-visible" overflow="visible" aria-hidden="true"></svg>
+                <div class="pointer-events-none absolute inset-x-16 top-1/2 h-px bg-gradient-to-r from-transparent via-rose-200 to-transparent" aria-hidden="true"></div>
+
+                <div class="relative z-10 flex items-center justify-end gap-4 pr-2">
+                  <article id="expertise-sales" class="flex max-w-xs flex-col items-end rounded-2xl border border-rose-100 bg-white/80 p-6 text-right shadow-sm backdrop-blur-sm transition duration-200 hover:border-rose-200 hover:shadow-md motion-reduce:transition-none">
+                    <p class="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-rose-900">
+                      <span class="tracking-normal text-rose-300">01</span>
+                      Career
+                    </p>
+                    <span class="mt-3 block h-1 w-10 rounded-full bg-rose-300" aria-hidden="true"></span>
+                    <h4 class="mt-4 font-serif text-2xl leading-none text-stone-900">Sales and Marketing</h4>
+                    <p class="mt-2 text-sm leading-relaxed text-stone-600">Administration and documentation at work.</p>
+                    <p class="mt-3 text-sm font-medium text-rose-900">7 years work experience</p>
+                    <a href="work.html" class="mt-4 inline-flex rounded-full border border-rose-200 px-5 py-2 text-sm font-medium text-rose-900 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">See more</a>
+                  </article>
+                  <span data-dot class="h-3 w-3 shrink-0 rounded-full bg-rose-800 ring-4 ring-white" aria-hidden="true"></span>
                 </div>
-                <div class="relative h-56 w-56 overflow-hidden rounded-full bg-rose-100 ring-1 ring-rose-200">
-                  <img src="images/kelly-expertise.png" alt="Kelly Lim" class="absolute left-0 top-[-20.8%] w-[119.8%] max-w-none" />
+
+                <div class="relative z-10 p-8">
+                  <div class="relative h-56 w-56">
+                    <span class="diagram-orbit pointer-events-none absolute -inset-6 rounded-full border border-dashed border-rose-200" aria-hidden="true"></span>
+                    <span class="pointer-events-none absolute -inset-3 rounded-full border border-rose-200 bg-rose-50/40" aria-hidden="true"></span>
+                    <div data-diagram-center class="relative h-56 w-56 overflow-hidden rounded-full bg-rose-100 shadow-[0_22px_40px_-24px_rgba(159,18,57,0.55)] ring-1 ring-rose-200">
+                      <img src="images/kelly-expertise.png" alt="Kelly Lim" class="absolute left-0 top-[-20.8%] w-[119.8%] max-w-none" />
+                    </div>
+                  </div>
                 </div>
-                <div id="expertise-yoga" class="text-left">
-                  <h4 class="font-serif text-2xl leading-none text-stone-900">Yoga</h4>
-                  <p class="mt-2 text-sm leading-relaxed text-stone-600">RYT 200 Hatha Yoga Instructor.</p>
-                  <a href="yoga.html" class="mt-4 inline-flex rounded-full border border-rose-200 px-5 py-2 text-sm font-medium text-rose-900 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">See more</a>
+
+                <div class="relative z-10 flex items-center justify-start gap-4 pl-2">
+                  <span data-dot class="h-3 w-3 shrink-0 rounded-full bg-rose-800 ring-4 ring-white" aria-hidden="true"></span>
+                  <article id="expertise-yoga" class="flex max-w-xs flex-col items-start rounded-2xl border border-rose-100 bg-white/80 p-6 text-left shadow-sm backdrop-blur-sm transition duration-200 hover:border-rose-200 hover:shadow-md motion-reduce:transition-none">
+                    <p class="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-rose-900">
+                      <span class="tracking-normal text-rose-300">02</span>
+                      Yoga
+                    </p>
+                    <span class="mt-3 block h-1 w-10 rounded-full bg-rose-300" aria-hidden="true"></span>
+                    <h4 class="mt-4 font-serif text-2xl leading-none text-stone-900">Yoga</h4>
+                    <p class="mt-2 text-sm leading-relaxed text-stone-600">RYT 200 Hatha Yoga Instructor.</p>
+                    <p class="mt-3 text-sm font-medium text-rose-900">3+ years of yoga experience</p>
+                    <a href="yoga.html" class="mt-4 inline-flex rounded-full border border-rose-200 px-5 py-2 text-sm font-medium text-rose-900 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">See more</a>
+                  </article>
                 </div>
               </div>
 
               <div class="mt-8 lg:hidden">
-                <div class="flex justify-end gap-2">
-                  <button type="button" data-carousel-prev class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-200 text-rose-900 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800" aria-label="Previous roles">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6" /></svg>
-                  </button>
-                  <button type="button" data-carousel-next class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-200 text-rose-900 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800" aria-label="Next roles">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" /></svg>
-                  </button>
-                </div>
-                <ul data-carousel class="mt-5 flex snap-x gap-4 overflow-x-auto scroll-smooth pb-2">
+                <ul data-carousel class="flex snap-x gap-4 overflow-x-auto scroll-smooth pb-2">
                   <li class="w-[18.5rem] shrink-0 snap-start">
                     <a href="work.html" class="flex h-full flex-col rounded-2xl border border-rose-100 bg-rose-50/70 p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">
-                      <span class="h-10 w-10 rounded-xl bg-rose-100" aria-hidden="true"></span>
+                      <span class="text-xs font-semibold uppercase tracking-[0.22em] text-rose-900">01 · Career</span>
                       <span class="mt-4 font-serif text-xl text-stone-900">Sales and Marketing</span>
                       <span class="mt-1 text-sm text-stone-500">Administration and documentation at work.</span>
+                      <span class="mt-3 text-sm font-medium text-rose-900">7 years work experience</span>
                       <span class="mt-4 text-sm font-medium text-rose-900">See more →</span>
                     </a>
                   </li>
                   <li class="w-[18.5rem] shrink-0 snap-start">
                     <a href="yoga.html" class="flex h-full flex-col rounded-2xl border border-rose-100 bg-rose-50/70 p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-800">
-                      <span class="h-10 w-10 rounded-xl bg-rose-100" aria-hidden="true"></span>
+                      <span class="text-xs font-semibold uppercase tracking-[0.22em] text-rose-900">02 · Yoga</span>
                       <span class="mt-4 font-serif text-xl text-stone-900">Yoga</span>
                       <span class="mt-1 text-sm text-stone-500">RYT 200 Hatha Yoga Instructor.</span>
+                      <span class="mt-3 text-sm font-medium text-rose-900">3+ years of yoga experience</span>
                       <span class="mt-4 text-sm font-medium text-rose-900">See more →</span>
                     </a>
                   </li>
@@ -117,6 +140,6 @@
 
       <div data-component="component/footer.html"></div>
     </div>
-    <script src="main.js?v=9"></script>
+    <script src="main.js?v=10"></script>
   </body>
 </html>
