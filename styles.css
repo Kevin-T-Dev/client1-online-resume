@@ -1,17 +1,28 @@
 /*
   Shared page styles for index.html and home.html.
   The font variables feed Tailwind's font-sans and font-serif classes.
+  Outfit = body and UI. Playfair Display = titles and quotes.
 */
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+:root,
 html.scroll-smooth {
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
-  --font-quote: "Newsreader", ui-serif, Georgia, "Times New Roman", serif;
+  --font-serif: "Playfair Display", serif;
+  --font-quote: "Playfair Display", serif;
+}
+
+.font-serif {
+  font-weight: 600;
 }
 
 .font-quote {
   font-family: var(--font-quote);
   font-style: italic;
-  font-weight: 560;
+  font-weight: 600;
 }
 
 html {
@@ -140,10 +151,32 @@ html {
   display: none;
 }
 
-[data-carousel-prev][aria-disabled="true"],
-[data-carousel-next][aria-disabled="true"] {
-  opacity: 0.35;
-  pointer-events: none;
+.diagram-orbit {
+  transform-origin: center;
+}
+
+@keyframes diagram-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes diagram-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .diagram-orbit {
+    animation: diagram-orbit 36s linear infinite;
+  }
+
+  .diagram-line {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: diagram-draw 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

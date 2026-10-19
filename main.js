@@ -173,43 +173,14 @@
       });
     });
 
-    const scroller = document.querySelector("[data-carousel]");
-    const prev = document.querySelector("[data-carousel-prev]");
-    const next = document.querySelector("[data-carousel-next]");
-    if (scroller && prev && next) {
-      const motion = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-
-      function step() {
-        const card = scroller.querySelector("li");
-        if (!card) {
-          return scroller.clientWidth;
-        }
-        return card.getBoundingClientRect().width + 16;
-      }
-
-      function refreshArrows() {
-        const max = scroller.scrollWidth - scroller.clientWidth - 2;
-        prev.setAttribute("aria-disabled", scroller.scrollLeft <= 2 ? "true" : "false");
-        next.setAttribute("aria-disabled", scroller.scrollLeft >= max ? "true" : "false");
-      }
-
-      prev.addEventListener("click", function () {
-        scroller.scrollBy({ left: -step(), behavior: motion });
-      });
-      next.addEventListener("click", function () {
-        scroller.scrollBy({ left: step(), behavior: motion });
-      });
-      scroller.addEventListener("scroll", refreshArrows, { passive: true });
-      window.addEventListener("resize", refreshArrows);
-      refreshArrows();
-    }
-
     setupReveal();
 
     const diagram = document.querySelector("[data-diagram]");
     const diagramLines = document.querySelector("[data-diagram-lines]");
     const diagramCenter = document.querySelector("[data-diagram-center]");
     if (diagram && diagramLines && diagramCenter) {
+      let hasAnimated = false;
+
       function drawDiagram() {
         if (diagram.clientWidth === 0) {
           return;
@@ -222,7 +193,9 @@
         const cy = center.top - rootBox.top + center.height / 2;
         const rx = center.width / 2;
         const ry = center.height / 2;
-        const lines = [...diagram.querySelectorAll("[data-dot]")].map(function (dot) {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const animate = !hasAnimated && !reduceMotion;
+        const paths = [...diagram.querySelectorAll("[data-dot]")].map(function (dot) {
           const box = dot.getBoundingClientRect();
           const x = box.left - rootBox.left + box.width / 2;
           const y = box.top - rootBox.top + box.height / 2;
@@ -234,11 +207,42 @@
           const y1 = y - (dy / distance) * (box.height / 2 + 2);
           const x2 = cx + dx * edge;
           const y2 = cy + dy * edge;
-          return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" />';
+          const mx = (x1 + x2) / 2;
+          return (
+            "M " +
+            x1.toFixed(1) +
+            " " +
+            y1.toFixed(1) +
+            " C " +
+            mx.toFixed(1) +
+            " " +
+            y1.toFixed(1) +
+            ", " +
+            mx.toFixed(1) +
+            " " +
+            y2.toFixed(1) +
+            ", " +
+            x2.toFixed(1) +
+            " " +
+            y2.toFixed(1)
+          );
         });
+        const pathMarkup = paths
+          .map(function (d) {
+            return "<path d=\"" + d + "\"" + (animate ? " class=\"diagram-line\" pathLength=\"1\"" : "") + " />";
+          })
+          .join("");
         diagramLines.setAttribute("viewBox", "0 0 " + width + " " + height);
         diagramLines.innerHTML =
-          '<g fill="none" stroke="#9f1239" stroke-width="1.5" stroke-linecap="round">' + lines.join("") + "</g>";
+          "<g fill=\"none\" stroke-linecap=\"round\">" +
+          "<g stroke=\"#fda4af\" stroke-width=\"6\" stroke-opacity=\"0.35\">" +
+          pathMarkup +
+          "</g>" +
+          "<g stroke=\"#9f1239\" stroke-width=\"1.5\">" +
+          pathMarkup +
+          "</g>" +
+          "</g>";
+        hasAnimated = true;
       }
 
       drawDiagram();
